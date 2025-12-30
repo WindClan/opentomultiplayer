@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "opentoserver",
+  "version": "${version}",
+  "name": "Open To Multiplayer Screen",
+  "description": "Makes the game open to the multiplayer screen by default",
+  "authors": ["WindClan"],
+  "license": "CC0-1.0",
+  "icon": "assets/opentoserver/icon.png",
+  "accessWidener" : "opentoserver.classtweaker",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "windclan.opentoserver.main"
+    ]
+  },
+  "mixins": [
+    "opentoserver.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "${minecraft_version}"
+  }
+}
