@@ -1,4 +1,4 @@
-package windclan.opentoserver.mixins;
+package windclan.opentoserver;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.yggdrasil.ProfileActionType;

@@ -9,15 +9,11 @@
   "icon": "assets/opentoserver/icon.png",
   "accessWidener" : "opentoserver.classtweaker",
   "environment": "client",
-  "entrypoints": {
-    "client": [
-      "windclan.opentoserver.main"
-    ]
-  },
+  "entrypoints": {},
   "mixins": [
     "opentoserver.mixins.json"
   ],
   "depends": {
-    "minecraft": "26.1-alpha.1"
+    "minecraft": ">=${minecraft_version}"
   }
 }
