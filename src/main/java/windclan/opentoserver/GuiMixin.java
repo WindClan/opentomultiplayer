@@ -4,6 +4,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.yggdrasil.ProfileActionType;
 import com.mojang.authlib.yggdrasil.ProfileResult;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.screens.BanNoticeScreens;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
@@ -15,18 +16,16 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 
-@Mixin(Minecraft.class)
-public class MinecraftMixin {
+@Mixin(Gui.class)
+public class GuiMixin {
     /**
      * @author WindClan
      * @reason Changes the order the initial screens are added
      */
     @Overwrite
     private boolean addInitialScreens(List<Function<Runnable, Screen>> list) {
-        Minecraft a = (Minecraft)(Object)this;
         boolean bl = false;
-
-        ProfileResult profileResult = a.profileFuture.join();
+        ProfileResult profileResult = Minecraft.getInstance().profileFuture.join();
         if (profileResult != null) {
             GameProfile gameProfile = profileResult.profile();
             Set<ProfileActionType> set = profileResult.actions();
